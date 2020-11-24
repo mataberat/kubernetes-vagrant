@@ -14,7 +14,7 @@ $ cd kubernetes-vagrant/ ; vagrant up
 - vagrant-scp plugin
 
 ``
-# ./scripts/get-kubectl-config.sh
+$ ./scripts/get-kubectl-config.sh
 ``
 
 The kubectl config will be located on `~/.kube/config-kubernetes-vagrant`
