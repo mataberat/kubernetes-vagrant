@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: lb-qoalaplus-ingress
+  namespace: default
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: alb-qoalaplus.k8s.devops.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: agent-service
+          servicePort: 11001

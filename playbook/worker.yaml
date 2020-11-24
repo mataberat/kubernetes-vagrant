@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Provisioning common configuration
+      include_tasks: common.yaml
+    - name: Provisioning kubernetes and cluster dependencies
+      include_tasks: kube.yaml
+    - name: Copy join command to worker
+      copy: src="files/exported-join-command" dest=/tmp/join-command.sh mode=0777
+    - name: Join the node to cluster
+      command: sh /tmp/join-command.sh
+
