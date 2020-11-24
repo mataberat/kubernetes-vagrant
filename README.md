@@ -1,6 +1,6 @@
 ### Requirements
-- Vagrant 2.2.14
-- VirtualBox 6.1
+- Vagrant >=2.2.14
+- VirtualBox >=6.1
 
 Make sure you don't have any Vagrant box installed in private range `192.168.40.0/24`. This private range will be used by the Master and Node.
 
